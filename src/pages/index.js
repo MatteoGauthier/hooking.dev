@@ -1,5 +1,9 @@
 import React from "react"
-
+import Header from "../components/Header"
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <div className="container mx-auto antialiased">
+      <Header />
+    </div>
+  )
 }
