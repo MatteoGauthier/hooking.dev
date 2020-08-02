@@ -6,6 +6,9 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    placeholder:true
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-purgecss`,

@@ -15,7 +15,7 @@ const Card = ({ name, stars, desc, source }) => {
     >
       <div>
         <div className="flex justify-between mb-3 font-bold">
-          <span className="text-lg text-bright-green">{name}</span>
+          <span className="text-lg text-bright-green">{name}<span>()</span></span>
           <div className="flex space-x-4">
             <div className="flex items-center space-x-1 text-bright-yellow">
               <StarIcon />
