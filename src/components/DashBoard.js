@@ -3,12 +3,13 @@ import SearchInput from "./Filter/SearchInput"
 import HideShowInput from "./Filter/HideShowInput"
 import SortInput from "./Filter/SortInput"
 import Table from "../components/Table"
+const words = ["yo", "react", "french"]
 
 const hooksSnippet = new Array(10).fill().map(() => {
   return {
     name: "useHover",
     stars: Math.floor(Math.random() * 10) + 1,
-    description: "Observe mouse enter and leave to element.",
+    description: words[Math.floor(Math.random() * words.length)],
     source: "https://github.com/MattixNow/mattaio-website",
   }
 })
@@ -20,7 +21,10 @@ const DashBoard = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       const filter = hooksSnippet.filter(state => {
-        return state.stars.toString().includes(search.toString())
+        return (
+          state.stars.toString().includes(search.toString()) ||
+          state.description.toLowerCase().includes(search.toLowerCase())
+        )
       })
 
       setFilteredStates(filter)
@@ -32,10 +36,7 @@ const DashBoard = () => {
     <div className="w-full">
       <div className="flex justify-between mx-4">
         <div>
-          <SearchInput
-            value={search}
-            change={e => setSearch(e)}
-          />
+          <SearchInput value={search} change={e => setSearch(e)} />
         </div>
         <div className="flex space-x-6">
           <SortInput />
