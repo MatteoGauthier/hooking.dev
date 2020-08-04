@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useStaticQuery } from "gatsby"
 import SearchInput from "./Filter/SearchInput"
 import HideShowInput from "./Filter/HideShowInput"
 import SortInput from "./Filter/SortInput"
@@ -7,20 +8,50 @@ const words = ["yo", "react", "french"]
 
 const hooksSnippet = new Array(10).fill().map(() => {
   return {
-    name: "useHover",
-    stars: Math.floor(Math.random() * 10) + 1,
-    description: words[Math.floor(Math.random() * words.length)],
-    source: "https://github.com/MattixNow/mattaio-website",
+    node: {
+      frontmatter: {
+        name: "useHover",
+        stars: Math.floor(Math.random() * 10) + 1,
+        description: words[Math.floor(Math.random() * words.length)],
+        source: "https://github.com/MattixNow/mattaio-website",
+      },
+      html: "<p>Hey welcome to the instruction for the useHover hook</p>",
+    },
   }
 })
 
 const DashBoard = () => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___stars }) {
+        nodes {
+          frontmatter {
+            title
+            stars
+            source
+            description
+          }
+          html
+          rawMarkdownBody
+        }
+      }
+      site {
+        siteMetadata {
+          placeholder
+        }
+      }
+    }
+  `)
+  console.log(data)
+  const hooks = data.allMarkdownRemark.nodes
+  console.log(hooks)
+
   const [search, setSearch] = useState("")
-  const [filteredStates, setFilteredStates] = useState(hooksSnippet)
+  const [filteredStates, setFilteredStates] = useState(hooks)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const filter = hooksSnippet.filter(state => {
+      const filter = hooks.filter(({ frontmatter: state }) => {
         return (
           state.stars.toString().includes(search.toString()) ||
           state.description.toLowerCase().includes(search.toLowerCase())

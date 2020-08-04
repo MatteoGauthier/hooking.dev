@@ -49,8 +49,8 @@ module.exports = {
         "Noto Color Emoji",
       ],
       mono: [
-        "'Inconsolata'",
-        "Inconsolata",
+        "'Source Code Pro'",
+        "Source Code Pro",
         "Menlo",
         "Monaco",
         "Consolas",
@@ -62,6 +62,7 @@ module.exports = {
     extend: {
       colors: {
         "bright-white": "#F8F8F2",
+        "bright-cyan": "#5ccfe6",
         "dark-violet": "#22212C",
         "soft-violet": "#B0A2FF",
         "bright-green": "#8AFF80",

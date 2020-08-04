@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    placeholder:true
+    placeholder: true,
   },
   plugins: [
     {
@@ -27,7 +27,12 @@ module.exports = {
         path: `${__dirname}/content/hooks`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-prismjs`],
+      },
+    },
     {
       resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
@@ -37,7 +42,7 @@ module.exports = {
             weights: ["400", "500"],
           },
           {
-            family: "Inconsolata",
+            family: "Source Code Pro",
             weights: ["400", "700"],
           },
           {
