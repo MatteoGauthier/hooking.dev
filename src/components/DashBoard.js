@@ -53,7 +53,7 @@ const DashBoard = () => {
     const timer = setTimeout(() => {
       const filter = hooks.filter(({ frontmatter: state }) => {
         return (
-          state.stars.toString().includes(search.toString()) ||
+          state.title.toLowerCase().includes(search.toString()) ||
           state.description.toLowerCase().includes(search.toLowerCase())
         )
       })

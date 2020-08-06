@@ -7,7 +7,6 @@ export default function Home() {
       <Header />
       <hr className="mx-8 my-16 border border-indigo-200 rounded-lg" />
       <DashBoard />
-
     </div>
   )
 }

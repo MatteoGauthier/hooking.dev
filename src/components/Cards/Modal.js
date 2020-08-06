@@ -65,7 +65,7 @@ const Modal = ({ onChildClick, isOpen, hook }) => {
                 "Observe mouse enter and leave to element."
               </span>
             </div>
-            <div dangerouslySetInnerHTML={{__html: hook.html}}></div>
+            <div dangerouslySetInnerHTML={{ __html: hook.html }}></div>
           </div>
           <div className="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
             <span className="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">

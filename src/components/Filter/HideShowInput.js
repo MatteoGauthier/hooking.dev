@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import HideShowIcon from "../Icons/HideShowIcon"
 const HideShowInput = () => {
   return (
@@ -12,4 +12,3 @@ const HideShowInput = () => {
 }
 
 export default HideShowInput
-

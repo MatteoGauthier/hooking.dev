@@ -2,7 +2,6 @@
 
 Hand-picked React Hooks utilities
 
-
 # TODO's
 
 - [x] Implement search filter
@@ -11,7 +10,6 @@ Hand-picked React Hooks utilities
 - [ ] Add instruction for each hooks snippet
 - [ ] Add transtion to the modal
 
-
-## Credits 
+## Credits
 
 - https://typeofnan.dev/debouncing-with-react-hooks/
