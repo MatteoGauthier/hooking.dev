@@ -8,6 +8,7 @@ const config = require("./config/website")
 module.exports = {
   /* Your site config here */
   siteMetadata: {
+    siteUrl: config.siteUrl,
     placeholder: true,
     title: config.siteTitle,
     twitterHandle: config.twitterHandle,
@@ -54,10 +55,14 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: { tailwind: true },
-    },
+    // Tailwind integrate it
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     tailwind: true,
+    //     rejected: false
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-postcss",
       options: {

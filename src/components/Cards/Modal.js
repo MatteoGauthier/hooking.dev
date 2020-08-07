@@ -10,10 +10,6 @@ const Modal = ({ onChildClick, isOpen, hook }) => {
   function handleClick() {
     onChildClick() // pass any argument to the callback
   }
-  function handleClickOutside(event) {
-    console.log(event.relatedTarget)
-    // onChildClick() // pass any argument to the callback
-  }
   return (
     <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 sm:inset-0 sm:flex sm:items-center sm:justify-center">
       <Transition

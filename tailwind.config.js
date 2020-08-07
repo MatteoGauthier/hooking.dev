@@ -1,5 +1,14 @@
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: true,
+    rejected: false,
+    content: [
+      "./src/**/*.html",
+      "./src/**/*.vue",
+      "./src/**/*.jsx",
+      "./src/**/*.js",
+    ],
+  },
   theme: {
     fontFamily: {
       sans: [
@@ -74,7 +83,7 @@ module.exports = {
 
       colors: {
         // defaults to {}
-        "cool": ["#4158D0", "#C850C0","#FFCC70"],
+        cool: ["#4158D0", "#C850C0", "#FFCC70"],
       },
     },
     extend: {

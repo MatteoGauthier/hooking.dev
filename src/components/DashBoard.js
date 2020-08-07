@@ -42,9 +42,9 @@ const DashBoard = () => {
       }
     }
   `)
-  console.log(data)
+  // console.log(data)
   const hooks = data.allMarkdownRemark.nodes
-  console.log(hooks)
+  // console.log(hooks)
 
   const [search, setSearch] = useState("")
   const [filteredStates, setFilteredStates] = useState(hooks)
