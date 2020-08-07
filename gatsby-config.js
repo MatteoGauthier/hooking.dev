@@ -4,12 +4,56 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+const config = require("./config/website")
 module.exports = {
   /* Your site config here */
   siteMetadata: {
     placeholder: true,
+    title: config.siteTitle,
+    twitterHandle: config.twitterHandle,
+    titleTemplate: config.siteTitleTemplate,
+    description: config.siteDescription,
+    keywords: config.keywords,
+    // canonicalUrl: siteUrl,
+    url: "https://hooking.now.sh", // No trailing slash allowed!
+    image: "/images/website.jpg", // Path to your image you placed in the 'static' folder
+    author: config.author,
+    organization: {
+      name: config.organization,
+    },
+    twitterUsername: config.twitterHandle,
+    twitterHandle: config.twitterHandle,
+    social: {
+      instagram: config.instagramHandle,
+      twitter: config.twitterHandle,
+    },
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: config.siteTitle,
+        short_name: config.siteTitleShort,
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        lang: config.lang,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: "standalone",
+        icons: [
+          {
+            src: "/favicons/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/favicons/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: { tailwind: true },
@@ -52,5 +96,6 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-sitemap",
   ],
 }
