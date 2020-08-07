@@ -44,11 +44,11 @@ date: "${year}-${month+1}-${date}"
 name: "${snippet.name}"
 stars: 128
 description: "Observe mouse enter and leave to element."
-source: "https://github.com/MattixNow/mattaio-website"
+source: "https://github.com/MatteoGauthier/mattaio-website"
 ---
 ${snippet.instru}`
 
-    var link = `https://github.com/MattixNow/hooking.dev/new/master/content/hooks?filename=${
+    var link = `https://github.com/MatteoGauthier/hooking.dev/new/master/content/hooks?filename=${
       snippet.name
     }.md&value=${encodeURIComponent(body)}`
     window.open(link, "_blank")
