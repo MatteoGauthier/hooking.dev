@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@tailwindcss/ui": "^0.4.0",
+    "add": "^2.0.6",
     "gatsby": "^2.23.12",
     "gatsby-plugin-google-fonts-v2": "^0.0.6",
     "gatsby-plugin-manifest": "^2.4.21",
@@ -24,13 +25,22 @@
     "gatsby-remark-prismjs": "^3.5.10",
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-transformer-remark": "^2.8.27",
-    "prismjs": "^1.20.0",
+    "github-markdown-css": "^4.0.0",
+    "prismjs": "^1.21.0",
     "react": "^16.12.0",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.12.0",
+    "react-hook-form": "^6.3.0",
     "react-onclickoutside": "^6.9.0",
-    "react-transition-group": "^4.4.1"
+    "react-simple-code-editor": "^0.11.0",
+    "react-transition-group": "^4.4.1",
+    "rich-markdown-editor": "^10.5.0-1",
+    "tailwindcss-border-gradients": "^2.0.3",
+    "use-debounce": "^3.4.3",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
     "prettier": "2.0.5",
     "tailwindcss": "^1.5.2"
   },

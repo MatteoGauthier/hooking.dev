@@ -59,6 +59,24 @@ module.exports = {
         "monospace",
       ],
     },
+    linearBorderGradients: {
+      directions: {
+        // defaults to these values
+        t: "to top",
+        tr: "to top right",
+        r: "to right",
+        br: "to bottom right",
+        b: "to bottom",
+        bl: "to bottom left",
+        l: "to left",
+        tl: "to top left",
+      },
+
+      colors: {
+        // defaults to {}
+        "cool": ["#4158D0", "#C850C0","#FFCC70"],
+      },
+    },
     extend: {
       colors: {
         "bright-white": "#F8F8F2",
@@ -77,6 +95,7 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/ui"),
+    require("tailwindcss-border-gradients")(),
     function ({ addComponents }) {
       addComponents({
         ".container": {

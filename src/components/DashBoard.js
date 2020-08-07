@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import SearchInput from "./Filter/SearchInput"
 import HideShowInput from "./Filter/HideShowInput"
 import SortInput from "./Filter/SortInput"

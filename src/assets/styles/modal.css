@@ -1,0 +1,13 @@
+ul, li {
+  @apply list-disc
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d6d6d6;
+    border-radius: 5px;
+}

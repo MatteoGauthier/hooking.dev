@@ -28,7 +28,7 @@ const Card = ({ hook: hook }) => {
         <div>
           <div className="flex justify-between mb-3 font-bold">
             <span className="text-lg text-bright-green">
-              {hook.frontmatter.title}
+              {hook.frontmatter.name}
               <span>()</span>
             </span>
             <div className="flex space-x-4">
@@ -42,7 +42,7 @@ const Card = ({ hook: hook }) => {
               </div>
             </div>
           </div>
-          <p className="text-soft-violet">{hook.frontmatter.desc}</p>
+          <p className="text-soft-violet">{hook.frontmatter.description}</p>
         </div>
         <div className="flex justify-between font-bold">
           <a
