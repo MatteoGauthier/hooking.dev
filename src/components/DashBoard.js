@@ -26,7 +26,7 @@ const DashBoard = () => {
       allMarkdownRemark(sort: { order: DESC, fields: frontmatter___stars }) {
         nodes {
           frontmatter {
-            title
+            name
             stars
             source
             description
@@ -53,7 +53,7 @@ const DashBoard = () => {
     const timer = setTimeout(() => {
       const filter = hooks.filter(({ frontmatter: state }) => {
         return (
-          state.title.toLowerCase().includes(search.toString()) ||
+          state.name.toLowerCase().includes(search.toString()) ||
           state.description.toLowerCase().includes(search.toLowerCase())
         )
       })
