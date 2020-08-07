@@ -6,47 +6,52 @@ import Editor from "react-simple-code-editor"
 import { highlight, languages } from "prismjs/components/prism-core"
 import "prismjs/components/prism-markup"
 import "prismjs/components/prism-markdown"
-import "prismjs/themes/prism.css"
-// import "prismjs/themes/prism"
+import "dracula-prism/css/dracula-prism.css"
 
 import "../assets/styles/newHook.css"
-  console.log(languages)
+console.log(languages)
 
 const code = `# Salut`
-const NewHooks = () => {
+const NewHook = () => {
   const { register, handleSubmit, errors } = useForm()
   const [snippet, setSnippet] = useState({})
   const [instru, setInstru] = useState(code)
 
   const onSubmit = data => {
-    setSnippet({ name: data.name, author: data.author, source: data.source, description: data.description, instru })
+    setSnippet({
+      name: data.name,
+      author: data.author,
+      source: data.source,
+      description: data.description,
+      instru,
+    })
     handleSend()
   }
 
   const [handleChange] = useDebouncedCallback(value => {
-    setInstru(value())
+    setInstru(value)
   }, 1000)
 
   const handleSend = () => {
-     console.log(snippet)
-    const d = new Date()
-    const year = d.getFullYear() // 2019
-    const date = d.getDate() // 23
-    const month = d.getMonth() // 23
+    const d = new Date(Date.now())
+    const year = d.getFullYear()
+    const date = d.getDate()
+    const month = d.getMonth()
+
 
     const body = `---
-date: "${year}-${month}-${date}"
+date: "${year}-${month+1}-${date}"
 name: "${snippet.name}"
 stars: 128
 description: "Observe mouse enter and leave to element."
 source: "https://github.com/MattixNow/mattaio-website"
----`
-    console.log(body)
+---
+${snippet.instru}`
 
-    // var link = `https://github.com/MattixNow/hooking.dev/new/master/content/hooks?filename=${snippet.name}.md&value=`
-    // window.open("someLink", "_blank")
-    // let filename = value
-    // return "https://github.com/MattixNow/hooking.dev/new/master/content/hooks?filename=useYourHookName.md&value=bar"
+    var link = `https://github.com/MattixNow/hooking.dev/new/master/content/hooks?filename=${
+      snippet.name
+    }.md&value=${encodeURIComponent(body)}`
+    window.open(link, "_blank")
   }
   // console.log(errors)
   return (
@@ -172,31 +177,22 @@ source: "https://github.com/MattixNow/mattaio-website"
             </label>
           </div>
           <div className="relative">
-            <span className="text-lg font-medium text-gray-900">
+            <span className="text-lg font-medium text-gray-900 ">
               Hook description (Markdown editor)
             </span>
-            <div className="px-12 py-2 mt-1 border border-gray-300 rounded ">
+            <pre className="px-3 py-2 mt-1 border border-gray-300 rounded code-editor ">
               <Editor
                 value={instru}
-                onValueChange={setInstru}
+                onValueChange={handleChange}
                 highlight={code => highlight(code, languages.markdown)}
-                padding={10}
                 style={{
                   fontFamily: '"Fira code", "Fira Mono", monospace',
                   fontSize: 12,
                 }}
               />
-              {/* <Editor
-                value={setInstru}
-                onChange={handleChange}
-                className="bg-white "
-              /> */}
-            </div>
+            </pre>
           </div>
           <button
-            onClick={() => {
-              handleSend()
-            }}
             type="submit"
             className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-green-500 border border-transparent rounded-md shadow-sm hover:bg-green-400 focus:outline-none focus:border-green-700 focus:shadow-outline-red sm:text-sm sm:leading-5"
           >
@@ -204,9 +200,8 @@ source: "https://github.com/MattixNow/mattaio-website"
           </button>
         </div>
       </form>
-      {JSON.stringify(snippet, null, 2)}
     </div>
   )
 }
 
-export default NewHooks
+export default NewHook
