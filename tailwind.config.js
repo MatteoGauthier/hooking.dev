@@ -1,13 +1,13 @@
 module.exports = {
   purge: {
-    enabled: true,
-    rejected: false,
-    content: [
-      "./src/**/*.html",
-      "./src/**/*.vue",
-      "./src/**/*.jsx",
-      "./src/**/*.js",
-    ],
+    enabled: false,
+    // rejected: false,
+    // content: [
+    //   "./src/**/*.html",
+    //   "./src/**/*.vue",
+    //   "./src/**/*.jsx",
+    //   "./src/**/*.js",
+    // ],
   },
   theme: {
     fontFamily: {

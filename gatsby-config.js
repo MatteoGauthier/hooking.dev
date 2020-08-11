@@ -56,13 +56,12 @@ module.exports = {
       },
     },
     // Tailwind integrate it
-    // {
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     tailwind: true,
-    //     rejected: false
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true
+      },
+    },
     {
       resolve: "gatsby-plugin-postcss",
       options: {
@@ -76,6 +75,7 @@ module.exports = {
         path: `${__dirname}/content/hooks`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
