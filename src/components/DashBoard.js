@@ -13,7 +13,7 @@ const hooksSnippet = new Array(10).fill().map(() => {
         name: "useHover",
         stars: Math.floor(Math.random() * 10) + 1,
         description: words[Math.floor(Math.random() * words.length)],
-        source: "https://github.com/MattixNow/mattaio-website",
+        source: "https://github.com/MatteoGauthier/mattaio-website",
       },
       html: "<p>Hey welcome to the instruction for the useHover hook</p>",
     },
