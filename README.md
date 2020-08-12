@@ -12,6 +12,9 @@ Hand-picked React Hooks utilities
 - [ ] Add metatags
 - [ ] Create an article to explain the creation process
 - [ ] Creat a better README
+- [ ] Find a better way to wait for the debounce value before submit the newHook form
+- [ ] Move from bebounce snippet to use-debounce in Dashboard.js
+- [ ] Add default instruction to the newHook page
 
 ## Credits
 
