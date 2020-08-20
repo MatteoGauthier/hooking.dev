@@ -15,6 +15,7 @@ module.exports = {
     titleTemplate: config.siteTitleTemplate,
     description: config.siteDescription,
     keywords: config.keywords,
+    lang: config.lang,
     // canonicalUrl: siteUrl,
     url: "https://hooking.now.sh", // No trailing slash allowed!
     image: "/images/website.jpg", // Path to your image you placed in the 'static' folder
@@ -40,26 +41,14 @@ module.exports = {
         lang: config.lang,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: "standalone",
-        icons: [
-          {
-            src: "/favicons/android-chrome-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/favicons/android-chrome-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-        ],
+        icon: 'src/assets/' + config.siteLogo,
       },
     },
     // Tailwind integrate it
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        tailwind: true
+        tailwind: true,
       },
     },
     {

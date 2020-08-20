@@ -1,11 +1,11 @@
 module.exports = {
   siteTitle: "Hooking.dev - Collection of react hooks", // Navigation and Site Title
   siteTitleShort: "Hooking.dev", // short_name for manifest
-  siteUrl: process.env.ROOT_URL || "https://hooking.now.sh", // Domain of your site. No trailing slash!
+  siteUrl: process.env.ROOT_URL || "https://hooking.dev", // Domain of your site. No trailing slash!
   siteTitleTemplate: "%s · Hookin.dev - Collection of react hooks",
   lang: "en", // Language Tag on <html> element
   pathPrefix: "/",
-  siteLogo: "images/logo.png", // Used for SEO and manifest, path to your image you placed in the 'static' folder
+  siteLogo: "logo.png", // Used for SEO and manifest, path to your image you placed in the 'static' folder
   siteDescription:
     "Here is a collection of different utility hooks for your next projects ! Hooks presented here are lightweight and scoped, thanks to treeshaking export..",
 

@@ -1,6 +1,6 @@
 import React from "react"
 import Transition from "../../utils/Transition"
-import { GithubIcon, StarIcon, HeartIcon } from "../Icons"
+import { GithubIcon, StarIcon, HeartIcon, LikeIcon } from "../Icons"
 
 import { Scrollbars } from "react-custom-scrollbars"
 import "github-markdown-css"
@@ -34,17 +34,17 @@ const Modal = ({ onChildClick, isOpen, hook }) => {
         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
       >
-        <div className=" sm:max-w-3xl sm:w-full h-4/5">
+        <div className="h-full sm:max-w-3xl sm:w-full max-h-4/5">
           <Scrollbars
             autoHide
             autoHideTimeout={1000}
             autoHideDuration={200}
-            className="overflow-y-scroll transition-all transform"
+            className="overflow-y-scroll transition-all transform rounded-lg shadow-xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-headline"
           >
-            <div className="overflow-auto rounded-lg shadow-xl">
+            <div className="h-full">
               <div className="sticky top-0 font-mono bg-dark-violet sm:px-6 sm:py-5">
                 <div className="flex justify-between mb-1 font-bold">
                   <span className="text-lg text-bright-green">
@@ -70,7 +70,7 @@ const Modal = ({ onChildClick, isOpen, hook }) => {
                   </span>
                 </div>
               </div>
-              <div className="bg-white sm:p-6">
+              <div className="h-full bg-white sm:p-6">
                 <div
                   className="markdown-body"
                   dangerouslySetInnerHTML={{ __html: hook.html }}
@@ -79,22 +79,25 @@ const Modal = ({ onChildClick, isOpen, hook }) => {
               <div className="sticky bottom-0 flex justify-between px-4 py-3 border border-t border-gray-200 bg-gray-50 sm:px-6">
                 <div className="flex">
                   <span className="flex items-center w-full mt-3 rounded-md shadow-sm sm:mt-0 sm:w-auto">
-                    <button
+                    <a
+                      href={hook.frontmatter.source}
+                      target="_blank"
                       type="button"
                       className="inline-flex items-center justify-center w-full px-4 py-2 space-x-1 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5"
                     >
                       <GithubIcon className="w-5 h-5" />
                       <span>Source</span>
-                    </button>
+                    </a>
                   </span>
                 </div>
                 <div className="sm:flex sm:flex-row-reverse ">
                   <span className="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
                     <button
                       type="button"
-                      className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red sm:text-sm sm:leading-5"
+                      className="inline-flex items-center justify-center w-full px-4 py-2 space-x-1 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-red-500 border border-transparent rounded-md shadow-sm hover:bg-red-400 focus:outline-none focus:border-red-200 focus:shadow-outline-red sm:text-sm sm:leading-5"
                     >
-                      Deactivate
+                      <LikeIcon className="w-5 h-5" />
+                      <span>Like</span>
                     </button>
                   </span>
                   <span className="flex w-full mt-3 rounded-md shadow-sm sm:mt-0 sm:w-auto">
@@ -103,7 +106,7 @@ const Modal = ({ onChildClick, isOpen, hook }) => {
                       type="button"
                       className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5"
                     >
-                      Cancel
+                      Exit
                     </button>
                   </span>
                 </div>
